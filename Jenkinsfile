@@ -17,7 +17,7 @@ NEXUS_URL = "localhost:8081/nexus"
 // Repository where we will upload the artifact
 NEXUS_REPOSITORY = "Releases"
 // Jenkins credential id to authenticate to Nexus OSS
-NEXUS_CREDENTIAL_ID = "d2934956-c742-4c52-b175-09088263fc10	"
+NEXUS_CREDENTIAL_ID = "d2934956-c742-4c52-b175-09088263fc10"
 }
 
 
