@@ -25,8 +25,9 @@ script {
 			bat "mvn clean install -DskipTests=true"
             } catch (err) {
             currentBuild.result = 'FAILED'   
+            emailext body: 'build failure', subject: 'buildJenkinsStatus', to: 'wassim.mansour@esprit.tn'
             }
-            finally { emailext body: 'build failure', subject: 'buildJenkinsStatus', to: 'wassim.mansour@esprit.tn'}
+            finally { }
 }
 }
 }
