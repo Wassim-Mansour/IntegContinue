@@ -41,7 +41,7 @@ public class Main {
 
 			}
 
-			if (user instanceof Apprenant) {
+			if (user instanceof Apprenant && true) {
 
 				System.out.println("\n Bonjour Vous devez choisir le test du niveaux pour la formation (JAVA|XML|MOBILE)");
 
