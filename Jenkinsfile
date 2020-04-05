@@ -9,15 +9,15 @@ maven 'Maven3'
 
 environment {
 // This can be nexus3 or nexus2
-NEXUS_VERSION = "Nexus3.2"
+NEXUS_VERSION = "Nexus3"
 // This can be http or https
 NEXUS_PROTOCOL = "http"
 // Where your Nexus is running
 NEXUS_URL = "localhost:8081"
 // Repository where we will upload the artifact
-NEXUS_REPOSITORY = "repoTest"
+NEXUS_REPOSITORY = "maven-snapshots"
 // Jenkins credential id to authenticate to Nexus OSS
-NEXUS_CREDENTIAL_ID = "5a1deaa4-5845-4be4-bf2f-aa71f405275d"
+NEXUS_CREDENTIAL_ID = "nexus-credentials"
 }
 
 
@@ -57,6 +57,7 @@ echo 'Maven Build Finished'
 stage("publish to nexus") {
 steps {
 script {
+echo 'publish to nexus..'
 // Read POM xml file using 'readMavenPom' step , this step 'readMavenPom' is included in: https://plugins.jenkins.io/pipeline-utility-steps
 pom = readMavenPom file: "pom.xml";
 // Find built artifact under target folder
