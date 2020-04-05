@@ -42,11 +42,13 @@ emailext body: 'build return to normale', subject: 'buildJenkinsStatus', to: 'wa
 }
 }
 
-	 post {
+
+
+}
+	post {
 always {
 emailext body: 'salut', subject: 'post', to: 'wassim.mansour@esprit.tn'
 }
 }
-
-}
+	
 }
