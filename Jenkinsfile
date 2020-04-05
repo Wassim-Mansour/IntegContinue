@@ -17,7 +17,7 @@ NEXUS_URL = "localhost:8081"
 // Repository where we will upload the artifact
 NEXUS_REPOSITORY = "maven-snapshots"
 // Jenkins credential id to authenticate to Nexus OSS
-NEXUS_CREDENTIAL_ID = "nexus-credentials"
+NEXUS_CREDENTIAL_ID = "5a1deaa4-5845-4be4-bf2f-aa71f405275d"
 }
 
 
