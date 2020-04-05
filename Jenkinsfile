@@ -21,34 +21,44 @@ steps {
 script {
 // If you are using Windows then you should use "bat" step
 // Since unit testing is out of the scope we skip them
-         try{
-			bat "mvn clean install -DskipTests=true"
-            } catch (err) {
-            currentBuild.result = 'FAILED'   
-            emailext body: 'build failure', subject: 'buildJenkinsStatus', to: 'wassim.mansour@esprit.tn'
-            }
-            finally { }
+try{
+bat "mvn clean install -DskipTests=true"
+} catch (err) {
+emailext body: 'build failure', subject: 'buildMavenStatus', to: 'wassim.mansour@esprit.tn'
 }
+finally { 
+echo 'Build Maven finished'
 }
-}
- 
-stage("send mail") {
-steps {
-script {
-// If build terminate notif user
-
-emailext body: 'build return to normale', subject: 'buildJenkinsStatus', to: 'wassim.mansour@esprit.tn'
 }
 }
 }
 
-
+	
 
 }
 	post {
-always {
-emailext body: 'salut', subject: 'post', to: 'wassim.mansour@esprit.tn'
-}
+ always {
+            echo 'One way or another, I have finished'
+            deleteDir() /* clean up our workspace */
+        }
+        success {
+            echo 'I succeeeded!'
+			emailext body: 'build success', subject: 'buildJenkinsStatus', to: 'wassim.mansour@esprit.tn'
+
+        }
+        unstable {
+            echo 'I am unstable :/'
+			emailext body: 'build unstable', subject: 'buildJenkinsStatus', to: 'wassim.mansour@esprit.tn'
+        }
+        failure {
+            echo 'I failed :('
+			emailext body: 'build failure', subject: 'buildJenkinsStatus', to: 'wassim.mansour@esprit.tn'
+        }
+        changed {
+            echo 'Things were different before...'
+			emailext body: 'build changed', subject: 'buildJenkinsStatus', to: 'wassim.mansour@esprit.tn'
+
+        }
 }
 	
 }
