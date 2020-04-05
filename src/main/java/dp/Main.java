@@ -15,7 +15,7 @@ public class Main {
 		// Esprit.afficherCn();
 
 		System.out.println("--------------------------------------HELLO--------------------------------------------");
-wass
+
 		// Nouveau utilisateur
 		UtilisateurFactory utilisateurFactory = new UtilisateurFactory();
 		// role entrer par le console
