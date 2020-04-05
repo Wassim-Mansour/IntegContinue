@@ -29,7 +29,6 @@ public class Main {
 		String date;
 
 		while (!exist) {
-
 			System.out.println("Entrer votre ROLE(Admin|Apprenant)");
 
 			Role = input.nextLine();
