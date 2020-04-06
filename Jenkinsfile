@@ -61,9 +61,10 @@ bat " mvn test "
 }
 }
 }
-script {	
+	
 stage("Deploy") {
 steps {
+script {
 echo 'Deploying....'
 }
 }
