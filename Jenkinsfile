@@ -9,13 +9,13 @@ maven 'Maven3'
 
 environment {
 // This can be nexus3 or nexus2
-NEXUS_VERSION = "nexus2"
+NEXUS_VERSION = "nexus"
 // This can be http or https
 NEXUS_PROTOCOL = "http"
 // Where your Nexus is running
-NEXUS_URL = "localhost:8081/nexus"
+NEXUS_URL = "localhost:8081"
 // Repository where we will upload the artifact
-NEXUS_REPOSITORY = "Snapshots"
+NEXUS_REPOSITORY = "maven-snapshots"
 // Jenkins credential id to authenticate to Nexus OSS
 NEXUS_CREDENTIAL_ID = "d2934956-c742-4c52-b175-09088263fc10"
 }
