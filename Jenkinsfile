@@ -53,6 +53,21 @@ echo 'Maven Build Finished'
 }
 }
 
+stage("Test") {
+steps {
+script {
+echo 'Testing...'
+bat " mvn test "
+}
+}
+}
+script {	
+stage("Deploy") {
+steps {
+echo 'Deploying....'
+}
+}
+}
 	
 stage("publish to nexus") {
 steps {
