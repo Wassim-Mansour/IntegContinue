@@ -9,7 +9,7 @@ maven 'Maven3'
 
 environment {
 // This can be nexus3 or nexus2
-NEXUS_VERSION = "nexus"
+NEXUS_VERSION = "nexus3"
 // This can be http or https
 NEXUS_PROTOCOL = "http"
 // Where your Nexus is running
@@ -17,7 +17,7 @@ NEXUS_URL = "localhost:8081"
 // Repository where we will upload the artifact
 NEXUS_REPOSITORY = "maven-snapshots"
 // Jenkins credential id to authenticate to Nexus OSS
-NEXUS_CREDENTIAL_ID = "nexus-cred"
+NEXUS_CREDENTIAL_ID = "nexus-credentials"
 }
 
 
@@ -63,7 +63,7 @@ pom = readMavenPom file: "pom.xml";
 // Find built artifact under target folder
 filesByGlob = findFiles(glob: "target/*.${pom.packaging}");
 // Print some info from the artifact found
-echo "${filesByGlob[0].name} ${filesByGlob[0].path} ${filesByGlob[0].directory} ${filesByGlob[0].length} ${filesByGlob[0].lastModified}"
+	
 // Extract the path from the File found
 artifactPath = filesByGlob[0].path;
 // Assign to a boolean response verifying If the artifact name exists
