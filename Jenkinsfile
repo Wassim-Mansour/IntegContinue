@@ -40,7 +40,7 @@ script {
 // Since unit testing is out of the scope we skip them
 try{
 echo 'Maven Build Started'
-bat "mvn clean install -DskipTests=true"
+bat "mvn clean install -DskipTests=false"
 echo 'Maven Build Success'
 } catch (err) {
 emailext body: 'build failure', subject: 'buildMavenStatus', to: 'wassim.mansour@esprit.tn'
@@ -57,7 +57,7 @@ stage("Test") {
 steps {
 script {
 echo 'Testing...'
-bat " mvn test "
+bat "mvn test"
 }
 }
 }
@@ -73,7 +73,7 @@ echo 'Deploying....'
 stage("publish to nexus") {
 steps {
 script {
-echo 'publish to nexus..'
+echo 'publish to nexus...'
 // Read POM xml file using 'readMavenPom' step , this step 'readMavenPom' is included in: https://plugins.jenkins.io/pipeline-utility-steps
 pom = readMavenPom file: "pom.xml";
 // Find built artifact under target folder
