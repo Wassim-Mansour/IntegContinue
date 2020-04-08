@@ -27,7 +27,7 @@ steps {
 script {
 // Let's clone the source
 echo 'Clone From Git Started'
-git credentialsId: '26a8dbf4-0cc8-4741-9de8-f27c81b85946', url: 'https://github.com/Wassim-Mansour/IntegContinue.git';
+git credentialsId: '26a8dbf4-0cc8-4741-9de8-f27c81b85946', url: 'https://github.com/Wassim-Mansour/IntegContinue';
 echo 'Clone  Done'
 }
 }
