@@ -20,7 +20,7 @@ NEXUS_REPOSITORY = "maven-snapshots"
 NEXUS_CREDENTIAL_ID = "nexus-credentials"
 }
 
-
+	
 stages {
 stage("clone code") {
 steps {
